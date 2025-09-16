@@ -2,13 +2,40 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Build",
+            "label": "Debug Build",
             "type": "shell",
-            "command": "./build.bat",
-            "args": [],
+            "windows": {
+                "command": "./build.bat",
+                "args": [],
+            },
+            "linux": {
+                "command": "./build.sh",
+                "args": [],
+            },
             "group": {
                 "kind": "build",
                 "isDefault": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Release Build",
+            "type": "shell",
+            "windows": {
+                "command": "./build.bat",
+                "args": [
+                    "release"
+                ],
+            },
+            "linux": {
+                "command": "./build.sh",
+                "args": [
+                    "release"
+                ],
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": false
             },
             "problemMatcher": []
         }
